@@ -1,0 +1,14 @@
+{
+  "name": "quiz-app",
+  "version": "1.0.0",
+  "description": "A cool quiz app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Ilan Grodinsky",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^29.1.4"
+  }
+}
