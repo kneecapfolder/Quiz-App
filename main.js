@@ -7,14 +7,19 @@ const isMac = process.platform === 'darwin';
 // Create the main application window
 function createWindow() {
     const win = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: isDev ? 800 : 400,
+        height: 700,
         webPreferences: {
             preload: path.join(__dirname, 'preload.js')
         },
     });
+
+    // Open dev tools if in dev env
+    if (isDev) {
+        win.webContents.openDevTools();
+    }
   
-    win.loadFile(path.join(__dirname, 'index.html'));
+    win.loadFile(path.join(__dirname, 'src/html/index.html'));
 }
 
 app.whenReady().then(() => {
