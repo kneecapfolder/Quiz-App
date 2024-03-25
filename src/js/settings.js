@@ -6,6 +6,7 @@ var settings;
 
 closeElm.onclick = () => window.close();
 
+// Reset settings back to default
 resetElm.onclick = async () => {
     // Load default settings
     settings.root.bg = settings.root.default[0];
@@ -25,6 +26,7 @@ async function start() {
     stngs.apply(root, settings);
 }
 
+// Load the current settings in to the form
 function loadValues() {
     form.elements['bg'].value = settings.root.bg;
     form.elements['box'].value = settings.root.box;
@@ -39,6 +41,7 @@ form.onsubmit = async (e) => {
     settings.root.btn = form.elements['btn'].value;
     settings.root.btnHighlight = form.elements['btnHighlight'].value;
     
+    // Write the changes to the settings json
     stngs.save(settings);
     stngs.apply(root, settings);
 }

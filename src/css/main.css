@@ -9,7 +9,7 @@ body {
     width: 100%;
     height: 100vh;
 }
-#question {
+#pretext, #question {
     background-color: var(--box);
     padding: 20px;
     border-radius: var(--roundness);
@@ -19,16 +19,18 @@ body {
 #options {
     gap: 10px;
 }
-.optionBtn {
+button {
     background-color: var(--btn);
     color: black;
-    width: 300px;
-    height: 45px;
     border: none;
     border-radius: var(--roundness);
     color: var(--bg);
     font-size: 30px;
 }
-.optionBtn:hover {
+.optionBtn {
+    height: 45px;
+    width: 300px;
+}
+button:hover {
     background-color: var(--btnHighlight);
 }
