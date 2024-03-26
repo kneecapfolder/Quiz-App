@@ -9,12 +9,19 @@ body {
     width: 100%;
     height: 100vh;
 }
-#pretext, #question {
+#start {
+    gap: 10px;
+}
+#start > h1, #end > h2, #pretext, #question {
     background-color: var(--box);
     padding: 20px;
     border-radius: var(--roundness);
     max-width: 300px;
     text-align: center;
+}
+#start > button {
+    width: 150px;
+    height: 50px;
 }
 #options {
     gap: 10px;
