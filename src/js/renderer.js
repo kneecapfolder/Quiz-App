@@ -5,10 +5,12 @@ const questionElm = document.getElementById('question');
 const optionsElm = document.getElementById('options');
 const endMenuElm = document.getElementById('end');
 
-const startTxt = startMenuElm.children[0];
-const startBtn = startMenuElm.children[1];
-const quitBtn = startMenuElm.children[2];
-const endTxt = endMenuElm.children[0];
+const title = document.getElementById('title');
+const credit = document.getElementById('credit');
+
+const startTxt = startMenuElm.children[1];
+const startBtn = startMenuElm.children[2];
+const quitBtn = startMenuElm.children[3];
 const endBtn = endMenuElm.children[1];
 
 startBtn.onclick = () => displayPretext();
@@ -39,10 +41,14 @@ class Option {
         console.log(this.id, answer);
         optionsElm.children[this.id].style.backgroundColor = '#ff6969';
         optionsElm.children[answer-1].style.backgroundColor = '#69ff8f';
-        if (this.id === answer-1) correct++;
 
         // Wait a bit before load the next question
         await new Promise(res => setTimeout(() => res(), 1000));
+        if (this.id !== answer-1) {
+            displayStartMenu();
+            return;
+        }
+
         qIndex++;
         if (qIndex >= questions.length) displayEndScreen();
         else displayPretext();
@@ -52,11 +58,9 @@ class Option {
 
 // Init
 var interact = true;
-var correct = 0;
 var root = document.querySelector(':root');
 var qIndex = 0;
 var quiz;
-var startText;
 var pretext = [];
 var questions = [];
 var options = [];
@@ -71,8 +75,6 @@ async function start() {
     const settings = await (await fetch('../json/settings.json')).json();
     stngs.apply(root, settings);
     
-    // Init
-    startText = quiz.startMenu;
     pretext = quiz.PreText;
     questions = quiz.Questions;
     options = quiz.Options;
@@ -84,7 +86,6 @@ async function start() {
 // Start screen
 function displayStartMenu() {
     qIndex = 0;
-    correct = 0;
     endMenuElm.style.display = 'none';
     pretextElm.style.display = 'none';
     nextElm.style.display = 'none';
@@ -92,7 +93,9 @@ function displayStartMenu() {
     optionsElm.style.display = 'none';
     startMenuElm.style.display = 'flex';
 
-    startTxt.innerText = startText;
+    title.innerText = quiz.title
+    startTxt.innerText = quiz.startMenu;
+    credit.innerText = quiz.credit;
 }
 
 // Display pretext in the dom
@@ -128,8 +131,6 @@ function displayEndScreen() {
     questionElm.style.display = 'none';
     optionsElm.style.display = 'none';
     endMenuElm.style.display = 'flex';
-
-    endTxt.innerText = `you got ${correct}/${questions.length} questions right`;
 }
 
 // Apply settings json
