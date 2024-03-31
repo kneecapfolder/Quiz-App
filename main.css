@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'helv';
+    src: url('./HelveticaNowText-ExtraBold.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'helv', Arial, Helvetica, sans-serif;
+    color: white;
+    transition-duration: 250ms;
+    text-align: center;
+}
+
+head {
+    display: none;
+}
+
+body {
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+}
+
+button {
+    width: 20vh;
+    aspect-ratio: 4/1;
+    border: none;
+    border-radius: 3vh;
+    background-color: crimson;
+    color: yellow;
+    font-size: 3vh;
+    text-transform: uppercase;
+}
+
+button:hover, label:hover{
+    box-shadow: 0 0 2vh 0 crimson;
+    color: orange;
+}
+
+sub {
+    opacity: 50%;
+    font-size: 1vh;
+    display: none;
+}
+
+#start {
+    flex-direction: column;
+    gap: 1vh;
+}
+
+#start > h1 {
+    font-size: 5vh;
+}
+
+#start > p {
+    max-width: 35vh;
+    font-size: 2vh;
+    padding: 1vh;
+    border: .25vh solid white;
+    border-radius: 5vh;
+    border-style: dashed;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+label {
+    background-color: crimson;
+    color: yellow;
+    width: 6vh;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    font-size: 3vh;
+}
+
+label i {
+    color: inherit;
+}
+
+#start > aside {
+    font-size: 1.5vh;
+}
