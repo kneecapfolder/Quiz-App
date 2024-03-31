@@ -26,21 +26,25 @@
             <input accept="application/json" type="file" id="file">
             <h2></h2>
             <br>
-            <button>start</button>
+            <button onclick="display('pre');">start</button>
             <button onclick="window.close();">quit</button>
             <aside>Me, Myself & I</aside>
         </div>
 
         <div id="pre">
             <p></p>
+            <br>
+            <button onclick="display('quiz');">next</button>
         </div>
 
         <div id="quiz">
-            
+            <p></p>
+            <div></div>
         </div>
 
         <div id="end">
-
+            <p>congratulations!<br>you passed the quiz.</p>
+            <button onclick="display('start');">main menu</button>
         </div>
     </body>
 </html>

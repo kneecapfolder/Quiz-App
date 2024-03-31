@@ -13,6 +13,7 @@
     color: white;
     transition-duration: 250ms;
     text-align: center;
+    user-select: none;
 }
 
 head {
@@ -47,7 +48,7 @@ sub {
     display: none;
 }
 
-#start {
+body > * {
     flex-direction: column;
     gap: 1vh;
 }
@@ -85,4 +86,41 @@ label i {
 #start > h2 {
     color: gray;
     font-size: 1.5vh;
+}
+
+#quiz {
+    gap: 2vh;
+}
+
+#quiz > p, #end > p {
+    max-width: none;
+    width: 45vh;
+    font-size: 5vh;
+}
+
+#quiz > div {
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.option {
+    background-color: yellow;
+    color: #ff4848;
+    min-width: 28vh;
+    max-width: 40vh;
+    padding: .5vh;
+    font-size: 4vh;
+    border-radius: 5vh;
+}
+
+.option:not(.revealed):hover {
+    box-shadow: 0 0 2vh 0 yellow;
+    color: crimson;
+}
+
+.revealed {
+    transition-duration: 0;
+    background-color: lightcoral;
+    color: white;
+    box-shadow: none;
 }
