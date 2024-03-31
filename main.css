@@ -56,7 +56,7 @@ sub {
     font-size: 5vh;
 }
 
-#start > p {
+p {
     max-width: 35vh;
     font-size: 2vh;
     padding: 1vh;
@@ -82,6 +82,7 @@ label i {
     color: inherit;
 }
 
-#start > aside {
+#start > h2 {
+    color: gray;
     font-size: 1.5vh;
 }

@@ -1,20 +1,20 @@
 {
     "title": "Title Text",
-    "startMenu": "super epic example pretext",
+    "startPre": "super epic example pretext",
     "credit": "Me, Myself & I",
-    "PreText": [
+    "preText": [
         "background on question one",
         "background on question two",
         "background on question three",
         "background on question four"
     ],
-    "Questions": [
+    "questions": [
         "Question number one?",
         "Question number two?",
         "Question number three?",
         "Question number four?"
     ],
-    "Options": [
+    "options": [
         [
             "option 1",
             "option 2",
@@ -40,7 +40,7 @@
             "option 4"
         ]
     ],
-    "Answers": [
+    "answers": [
         1,
         2,
         3,
